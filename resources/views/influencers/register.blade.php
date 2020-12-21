@@ -130,11 +130,11 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Fecha de inicio de vacaciones</label>
-                                        <input type="text" name="start_vacation" id="start_vacation" value="2020-12-21" class="form-control flatpickr flatpickr-input active" >
+                                        <input type="text" name="start_vacation" id="start_vacation" value="2020-12-20" class="form-control flatpickr flatpickr-input active" >
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Fecha de fin de vacaciones</label>
-                                        <input type="text" name="end_vacation" id="end_vacation" value="2020-12-21" class="form-control flatpickr flatpickr-input active" >
+                                        <input type="text" name="end_vacation" id="end_vacation" value="2020-12-20" class="form-control flatpickr flatpickr-input active" >
                                     </div>            
                                 </div> 
                             </div>
@@ -147,12 +147,12 @@
                                         <div class="card-body">
                                             <div class="form-check mb-2">
                                                 <label class="new-control new-checkbox new-checkbox-text checkbox-primary">
-                                                    <input type="checkbox" value name="photo_ig" id="photo_ig" class="new-control-input">
+                                                    <input type="checkbox" value="1" name="photo_ig" id="photo_ig" class="new-control-input">
                                                     <span class="new-control-indicator"></span><span class="new-chk-content">Foto en Instagram</span>
                                                 </label>
                                             </div>
-                                            <span class="h6">El servicio consiste en Publicar una foto en instagram con un texto asociado y uno o varios hastags a <br> elegir por el anunciante.</span>
-                                            <div class="form-inline align-items-center mt-4">
+                                            <span class="h6">El servicio consiste en Publicar una foto en instagram con un texto asociado y uno o varios <br> hastags a elegir por el anunciante.</span>
+                                            <div class="form-inline align-items-center mt-4 d-none" id="photo_ig_inputs">
                                                 <label class="my-1 mr-2" for="price">Valor por este paquete</label>
                                                 <input type="text" name="price_photo_ig" id="price_photo_ig" class="form-control" placeholder="$">
                                                 
@@ -161,16 +161,16 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card mb-3">
+                                    <div class="card mb-3" style="width:718px">
                                         <div class="card-body">
                                             <div class="form-check mb-2">
                                                 <label class="new-control new-checkbox new-checkbox-text checkbox-primary">
-                                                    <input type="checkbox" value id="video_ig" name="video_ig" class="new-control-input">
+                                                    <input type="checkbox" value="1" id="video_ig" name="video_ig" class="new-control-input">
                                                     <span class="new-control-indicator"></span><span class="new-chk-content">Video en Instagram</span>
                                                 </label>
                                             </div>
-                                            <span class="h6">El servicio consiste en Publicar una video en Instagram con un texto asociado y uno o varios hastags a <br> elegir por la marca.</span>
-                                            <div class="form-inline align-items-center mt-4">
+                                            <span class="h6">El servicio consiste en Publicar una video en Instagram con un texto asociado y uno o varios <br> hastags a elegir por la marca.</span>
+                                            <div class="form-inline align-items-center mt-4 d-none" id="video_ig_inputs">
                                                 <label class="my-1 mr-2" for="price">Valor por este paquete</label>
                                                 <input type="text" name="price_video_ig" id="price_video_ig" class="form-control" placeholder="$">
                                                 
@@ -179,16 +179,16 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card">
+                                    <div class="card" style="">
                                         <div class="card-body">
                                             <div class="form-check mb-2">
                                                 <label class="new-control new-checkbox new-checkbox-text checkbox-primary">
-                                                    <input type="checkbox" value name="story_ig" id="story_ig" class="new-control-input">
+                                                    <input type="checkbox" value="1" name="story_ig" id="story_ig" class="new-control-input">
                                                     <span class="new-control-indicator"></span><span class="new-chk-content">Instagram Story</span>
                                                 </label>
                                             </div>
                                             <span class="h6">El servicio consiste en Publicar un Instagram Story siguiendo el briefing definido por la marca.</span>
-                                            <div class="form-inline align-items-center mt-4">
+                                            <div class="form-inline align-items-center mt-4 d-none" id="story_ig_inputs">
                                                 <label class="my-1 mr-2" for="price">Valor por este paquete</label>
                                                 <input type="text" name="price_story_ig" id="price_story_ig" class="form-control" placeholder="$">
                                                 
@@ -201,8 +201,6 @@
                                 
                             </div>
                         </div>
-                                           
-                    
                     <hr>
                     <div class="row">
                         <div class="col"><a class="btn btn-danger" id="prev">Anterior</a></div>
@@ -224,7 +222,7 @@
             postText: ' caracteres escritos.'
         });
 
-        let f1 = flatpickr($('#start_vacation'));    
+        let f1 = flatpickr($('#start_vacation'));
         let f2 = flatpickr($('#end_vacation'));
         
         $(document).ready(function(){
@@ -253,65 +251,100 @@
             });
         });
     </script>
-    <script>
+    <script> 
+
+        $('#photo_ig').click(function (){
+            if ($("input[name='photo_ig']:checked").val()) {
+                $('#photo_ig_inputs').removeClass('d-none');
+            }else{
+                $('#photo_ig_inputs').addClass('d-none');
+            }
+        });
+
+        $('#video_ig').click(function (){
+            if ($("input[name='video_ig']:checked").val()) {
+                $('#video_ig_inputs').removeClass('d-none');
+            } else{
+                $('#video_ig_inputs').addClass('d-none');
+            }
+        });
+        $('#story_ig').click(function (){
+            if ($("input[name='story_ig']:checked").val()) {
+                $('#story_ig_inputs').removeClass('d-none');
+            }else{
+                $('#story_ig_inputs').addClass('d-none');
+            }
+        });
 
         $('#register-influencer').submit(function (e){
             e.preventDefault();
 
-            var category_redSocial = new Array();
-            $("input[name='category_redSocial']:checked").each(function() {
-                category_redSocial.push($(this).val());
-            });
+            var start_vacation = $('#start_vacation').val();
+            var end_vacation = $('#end_vacation').val();
 
-            $.ajax({
-                url: "{{ route('influencers.store') }}",
-                type: "POST",
-                data: {
-                    name: $('#name').val(),
-                    email: $('#email').val(),
-                    url_ig: $('#url_ig').val(),
-                    description: $('#textarea').val(),
-                    country_audience: $('#country_audience').val(),
-                    language: $('#language').val(),
-                    advertisement_notice: $("input[name='advertisement_notice']:checked").val(),
-                    image: $('#image').val(),
-                    category_redSocial: category_redSocial,
-                    start_vacation: $('#start_vacation').val(),
-                    end_vacation: $('#end_vacation').val(),
-                    photo_ig: $("input[name='photo_ig']:checked").val(),
-                    video_ig: $("input[name='video_ig']:checked").val(),
-                    story_ig: $("input[name='story_ig']:checked").val(),
-                    price_photo_ig: $('#price_photo_ig').val(),
-                    price_video_ig: $('#price_video_ig').val(),
-                    price_story_ig: $('#price_story_ig').val(),
-                    discount_photo_ig: $('#discount_photo_ig').val(),
-                    discount_video_ig: $('#discount_video_ig').val(),
-                    discount_story_ig: $('#discount_story_ig').val(),
-                    _token: $("input[name='_token']").val()
-                },
-                success:function(res) {
-                    if (res.errors) {
-                        $.each(res.errors, function(key, value){
-                            $('.alert-danger').show();
-                            $('.alert-danger').append('<p>'+value+'</p>');
+           
+            if (start_vacation > end_vacation) {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'La fecha de inicio de vacaciones no puede ser menor que la de fin',
+                    icon: 'error',
+                    confirmButtonText: 'Aceptar'
+                });
+                return;
+            } else {
 
+                var category_redSocial = new Array();
+                $("input[name='category_redSocial']:checked").each(function() {
+                    category_redSocial.push($(this).val());
+                });
+
+                $.ajax({
+                    url: "{{ route('influencers.store') }}",
+                    type: "POST",
+                    data: {
+                        name: $('#name').val(),
+                        email: $('#email').val(),
+                        url_ig: $('#url_ig').val(),
+                        description: $('#textarea').val(),
+                        country_audience: $('#country_audience').val(),
+                        language: $('#language').val(),
+                        advertisement_notice: $("input[name='advertisement_notice']:checked").val(),
+                        image: $('#image').val(),
+                        category_redSocial: category_redSocial,
+                        start_vacation: start_vacation,
+                        end_vacation: end_vacation,
+                        photo_ig: $("input[name='photo_ig']:checked").val(),
+                        video_ig: $("input[name='video_ig']:checked").val(),
+                        story_ig: $("input[name='story_ig']:checked").val(),
+                        price_photo_ig: $('#price_photo_ig').val(),
+                        price_video_ig: $('#price_video_ig').val(),
+                        price_story_ig: $('#price_story_ig').val(),
+                        discount_photo_ig: $('#discount_photo_ig').val(),
+                        discount_video_ig: $('#discount_video_ig').val(),
+                        discount_story_ig: $('#discount_story_ig').val(),
+                        _token: $("input[name='_token']").val()
+                    },
+                    success:function(res) {
+                        if (res.errors) {
+                            $.each(res.errors, function(key, value){
+                                Swal.fire({
+                                    title: 'Error',
+                                    text: `Error: ${value}`,
+                                    icon: 'error',
+                                    confirmButtonText: 'Aceptar'
+                                })
+                            });
+                        }else{
+                            $('#register-influencer')[0].reset();
                             Swal.fire({
-                                title: 'Error',
-                                text: `Error: ${value}`,
-                                icon: 'error',
+                                title: 'Gracias por registrar tu red social',
+                                icon: 'success',
                                 confirmButtonText: 'Aceptar'
-                            })
-                        });
-                    }else{
-                        $('#register-influencer')[0].reset();
-                        Swal.fire({
-                            title: 'Gracias por registrar tu red social',
-                            icon: 'success',
-                            confirmButtonText: 'Aceptar'
-                        })              
+                            })              
+                        }
                     }
-                }
-            })
+                })
+            }
             
         })
 

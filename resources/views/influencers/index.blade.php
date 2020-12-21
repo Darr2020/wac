@@ -59,9 +59,9 @@
                 {data: 'id'},
                 {data: 'name'},
                 {data: 'email'},
-                {data: 'service'},
-                {data: 'price'},
-                {data: 'discount_promotion'},
+                {data: 'url_ig'},
+                {data: 'country_audience'},
+                {data: 'language'},
                 {data: 'action', orderable: false}
             ]
         })

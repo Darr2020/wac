@@ -18,7 +18,6 @@ class InfluencerController extends Controller {
             $influencers = Influencer::all();
             return DataTables::of($influencers)
                 ->addColumn('action', function ($influencers){
-                    $acciones = '<a href="" class="btn btn-warning"> Editar</a>';
                     $acciones .= '<button type="button" name="delete" class="btn btn-danger float-right">Eliminar</button>';
                     return $acciones;
                 })
@@ -74,8 +73,7 @@ class InfluencerController extends Controller {
                 'start_vacation.required' => 'Fecha de inicio de vacaciones es requerida', 
                 'end_vacation.required' => 'Fecha de fin de vacaciones es requerida', 
                 
-            ]
-            );
+            ]);
 
             if ($validator->fails()){
                 return response()->json(['errors'=>$validator->errors()->all()]);
