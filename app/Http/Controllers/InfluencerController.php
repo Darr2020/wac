@@ -18,7 +18,7 @@ class InfluencerController extends Controller {
             $influencers = Influencer::all();
             return DataTables::of($influencers)
                 ->addColumn('action', function ($influencers){
-                    $acciones .= '<button type="button" name="delete" class="btn btn-danger float-right">Eliminar</button>';
+                    $acciones = '<button type="button" name="delete" id="'.$influencers->id.'" class="btn btn-danger float-right delete">Eliminar</button>';
                     return $acciones;
                 })
                 ->rawColumns(['action'])
@@ -107,48 +107,15 @@ class InfluencerController extends Controller {
         }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
+  
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($id){
+        \DB::table('influencers')->delete($id);
+        return 'deleted';
     }
 }

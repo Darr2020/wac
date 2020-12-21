@@ -151,7 +151,7 @@
                                                     <span class="new-control-indicator"></span><span class="new-chk-content">Foto en Instagram</span>
                                                 </label>
                                             </div>
-                                            <span class="h6">El servicio consiste en Publicar una foto en instagram con un texto asociado y uno o varios <br> hastags a elegir por el anunciante.</span>
+                                            <span class="h6">El servicio consiste en Publicar una foto en instagram con un texto asociado y uno o varios &nbsp; &nbsp; <br> hastags a elegir por el anunciante.</span>
                                             <div class="form-inline align-items-center mt-4 d-none" id="photo_ig_inputs">
                                                 <label class="my-1 mr-2" for="price">Valor por este paquete</label>
                                                 <input type="text" name="price_photo_ig" id="price_photo_ig" class="form-control" placeholder="$">
@@ -161,7 +161,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card mb-3" style="width:718px">
+                                    <div class="card mb-3">
                                         <div class="card-body">
                                             <div class="form-check mb-2">
                                                 <label class="new-control new-checkbox new-checkbox-text checkbox-primary">
@@ -169,7 +169,7 @@
                                                     <span class="new-control-indicator"></span><span class="new-chk-content">Video en Instagram</span>
                                                 </label>
                                             </div>
-                                            <span class="h6">El servicio consiste en Publicar una video en Instagram con un texto asociado y uno o varios <br> hastags a elegir por la marca.</span>
+                                            <span class="h6">El servicio consiste en Publicar una video en Instagram con un texto asociado y uno o varios &nbsp;<br> hastags a elegir por la marca.</span>
                                             <div class="form-inline align-items-center mt-4 d-none" id="video_ig_inputs">
                                                 <label class="my-1 mr-2" for="price">Valor por este paquete</label>
                                                 <input type="text" name="price_video_ig" id="price_video_ig" class="form-control" placeholder="$">
@@ -299,7 +299,7 @@
                 });
 
                 $.ajax({
-                    url: "{{ route('influencers.store') }}",
+                    url: "/store",
                     type: "POST",
                     data: {
                         name: $('#name').val(),

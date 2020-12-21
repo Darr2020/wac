@@ -67,6 +67,39 @@
         })
     })
 </script>
+<script>
+    var id_influencer;
+    $(document).on('click', '.delete', function () {
+        id_influencer = $(this).attr('id');
+        Swal.fire({
+            title: 'Seguro?',
+            text: "Los cambios no se podrán revertir",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Eliminar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "POST",
+                        data: {
+                            "_token": "{{ csrf_token() }}",
+                        },
+                        url: 'delete/'+id_influencer,
+                        success:function(data){
+                            Swal.fire(
+                                'Eliminador!',
+                                'Se ha eliminado correctamente.',
+                                'success'
+                            )
+                        }
+                    });
+                    $('#table-social').DataTable().ajax.reload();
+                }
+            }) 
+        })
+</script>
 @endsection
 
 
