@@ -50,7 +50,7 @@ class InfluencerController extends Controller {
 
             $validator = \Validator::make($request->all(), [
                 'name' => 'required',
-                'email' => 'required|unique:influencers,email',
+                'email' => 'required',
                 'url_ig' => 'required|unique:influencers,url_ig',
                 'description' => 'required',
                 'country_audience' => 'required',
