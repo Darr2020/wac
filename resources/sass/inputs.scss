@@ -1,0 +1,190 @@
+.form-group label, label {
+    font-size: 15px;
+    color: #acb0c3;
+    letter-spacing: 1px;
+}
+
+.form-control {
+    height: auto;
+    border: 1px solid #bfc9d4;
+    color: #3b3f5c;
+    font-size: 15px;
+    padding: 8px 10px;
+    letter-spacing: 1px;
+    height: calc(1.4em + 1.4rem + 2px);
+    padding: .75rem 1.25rem;
+    border-radius: 6px;
+}
+
+.form-control:disabled, .form-control[readonly] { background-color: #f1f2f3; }
+
+.form-control:focus {
+    border-color: #1e88e5; 
+    outline:none;
+    box-shadow:none;
+}
+
+.new-control {
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    padding-left: 1.5rem;
+    margin-right: 1rem;
+    font-weight: 100;
+    font-size: 14px; 
+}
+  
+.new-control-input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0; 
+}
+  
+.new-control.new-checkbox { cursor: pointer; }
+
+.new-control.new-checkbox span.new-control-indicator:after {
+    border: solid #fff;
+    top: 50%;
+    left: 50%;
+    margin-left: -2px;
+    margin-top: -5px;
+    width: 4px;
+    height: 8px;
+    border-width: 0 2px 2px 0 !important;
+    transform: rotate(45deg);
+    content: '';
+    position: absolute;
+    display: none;
+    margin-left: -2px;
+    margin-top: -5px;
+    width: 4px;
+    height: 8px;
+    height: 8px; 
+}
+  
+.new-control.new-checkbox .new-control-indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    display: block;
+    width: 17px;
+    height: 17px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #e0e6ed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    border-radius: 4px; 
+}
+
+.new-control.new-checkbox > input:checked ~ span.new-control-indicator { background: #888ea8; }
+.new-control.new-checkbox > input:checked ~ span.new-control-indicator:after { display: block; }  
+.new-control.new-checkbox.checkbox-primary > input:checked ~ span.new-control-indicator { background: #1e88e5; } 
+.new-control.new-checkbox.checkbox-outline-primary > input:checked ~ span.new-control-indicator { border: 2px solid #1e88e5; }
+.new-control.new-checkbox.checkbox-outline-primary > input:checked ~ span.new-control-indicator:after { border-color: #1e88e5; }
+.new-control.new-checkbox.new-checkbox-text.checkbox-primary > input:checked ~ span.new-chk-content, .new-control.new-checkbox.new-checkbox-text.checkbox-outline-primary > input:checked ~ span.new-chk-content { color: #1e88e5; }
+.new-control.new-radio { cursor: pointer; }
+
+.new-control.new-radio .new-control-indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    display: block;
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #e0e6ed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    border-radius: 50%; 
+}
+
+.new-control.new-radio > input:checked ~ span.new-control-indicator { background: #888ea8; }
+
+.new-control.new-radio span.new-control-indicator:after {
+    top: 50%;
+    left: 50%;
+    margin-left: -3px;
+    margin-top: -3px;
+    content: '';
+    position: absolute;
+    display: none;
+    border-radius: 50%;
+    height: 6px;
+    width: 6px;
+    background-color: #fff;
+}
+
+.new-control.new-radio.radio-primary > input:checked ~ span.new-control-indicator { background: #1e88e5; }
+
+
+// UPLOAD FILE DRAG-DROP
+.upload-img{
+    z-index: 999; 
+    opacity: 0; 
+    width: 443px; 
+    height: 200px; 
+    position: absolute; 
+    right: 0px; 
+    left: 0px; 
+    margin-right: auto; 
+    margin-left: auto;
+}
+.input-dragDrop {
+    display: block;
+    width: 543px;
+    margin: 0 auto 25px auto;
+    padding: 25px;
+    color: #97A1A8;
+    background: #fff;
+    border: 2px dashed #bfc9d4;
+    text-align: center;
+    -webkit-transition: box-shadow 0.3s, border-color 0.3s;
+    -moz-transition: box-shadow 0.3s, border-color 0.3s;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+.input-dragDrop .input-icon {
+    font-size: 48px;
+    margin-top: -10px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.input-text h3 {
+    margin: 0;
+    font-size: 20px;
+}
+.input-text span { font-size: 15px;}
+.input-choose-btn.blue {
+    color: #1e88e5;
+    border: 1px solid #1e88e5;
+}
+.input-choose-btn {
+    display: inline-block;
+    padding: 8px 14px;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 15px;
+    font-weight: bold;
+    color: #8d9496;
+    border-radius: 3px;
+    border: 1px solid #c6c6c6;
+    vertical-align: middle;
+    background-color: #fff;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.05);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
